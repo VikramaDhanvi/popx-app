@@ -1,12 +1,43 @@
-# React + Vite
+# PopX React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive multi-page React application built for creating and managing user accounts — inspired by PopX UI/UX. This project features custom styled forms, dynamic routing, and client-side data persistence using React Context.
 
-Currently, two official plugins are available:
+![Screenshot](./screenshot.png) <!-- Optional: Add a screenshot image -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## Expanding the ESLint configuration
+🌐 [View on GitHub Pages](https://VikramaDhanvi.github.io/popx-app/)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Features
+
+- ✅ Welcome page with "Create Account" and "Login" options
+- ✅ Styled floating input fields (Bootstrap 3.3.7)
+- ✅ Create Account form with validations
+- ✅ Sign In form with route-based navigation
+- ✅ Account Settings page that displays submitted user info
+- ✅ Responsive layout with React Bootstrap Grid
+- ✅ State management via React Context API
+- ✅ Fully client-side — no backend needed
+
+---
+
+## 🛠 Tech Stack
+
+- React (with Vite)
+- React Router DOM
+- React Bootstrap
+- Bootstrap 3.3.7
+- GitHub Pages for deployment
+- gh-pages for build automation
+
+---
+
+## 🧑‍💻 Getting Started (Local Development)
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/VikramaDhanvi/popx-app.git
+cd popx-app
