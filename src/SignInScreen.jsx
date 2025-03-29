@@ -1,15 +1,44 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from './UserContext';
 
 const SignInScreen = () => {
+  const { setUserData } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Fake name just for display (since login doesn't collect full name)
+    setUserData({
+      fullName: 'Signed In User',
+      email: form.email,
+      password: form.password,
+    });
+
+    navigate('/account');
+  };
+
   return (
     <>
-      {/* Bootstrap 3.3.7 CDN */}
       <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       />
 
-      {/* Inline styles for floating inputs */}
       <style>{`
         .form-group {
           position: relative;
@@ -25,7 +54,7 @@ const SignInScreen = () => {
           left: 20px;
           background-color: white;
           padding: 0 5px;
-          font-size: 16px;       /* Increased label font size */
+          font-size: 16px;
           color: #6c25ff;
           font-weight: 600;
         }
@@ -54,14 +83,18 @@ const SignInScreen = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
               </p>
 
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email Address</label>
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
                     className="form-control input-lg"
                     placeholder="Enter email address"
+                    required
                   />
                 </div>
 
@@ -70,15 +103,18 @@ const SignInScreen = () => {
                   <input
                     type="password"
                     id="password"
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
                     className="form-control input-lg"
                     placeholder="Enter password"
+                    required
                   />
                 </div>
 
                 <button
                   type="submit"
                   className="btn btn-secondary btn-lg btn-block"
-                  disabled
                 >
                   Login
                 </button>
